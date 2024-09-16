@@ -1,0 +1,41 @@
+<!DOCTYPE Map>
+<Map background-color="#b5d0d0" srs="epsg:4326" minimum-version="0.7.2">
+    <Parameters>
+        <Parameter name="sizes">512,512</Parameter>
+    </Parameters>
+    <Style name="1">
+        <Rule>
+            <TextSymbolizer
+                size="12"
+                dy="5"
+                allow-overlap="true"
+                face-name="DejaVu Sans Book"
+                wrap-width="[wrap-width]"
+                repeat-wrap-character="[repeat-wrap-character]"
+                wrap-character="[wrap-character]"
+                halo-radius="1">[label]</TextSymbolizer>
+            <PointSymbolizer allow-overlap="true" />
+            <DebugSymbolizer mode="vertex"/>
+            <DebugSymbolizer mode="collision"/>
+        </Rule>
+    </Style>
+
+    <Layer name="point" srs="epsg:4326">
+        <StyleName>1</StyleName>
+        <Datasource>
+            <Parameter name="type">csv</Parameter>
+            <Parameter name="inline">
+x,y,wrap-width,wrap-character,repeat-wrap-character,label
+0,9,,,,
+9,9,,,,
+2,8,32,,true,Two-Four-Eight-Sixteen-Thirty two-Sixty four
+7,8,32,-,true,Two-Four-Eight-Sixteen-Thirty two-Sixty four
+2,4,32,,false,Two-Four-Eight-Sixteen-Thirty two-Sixty four
+7,4,32,-,false,Two-Four-Eight-Sixteen-Thirty two-Sixty four
+9,0,,,,
+0,0,,,,
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+</Map>
